@@ -39,7 +39,4 @@ Para executar o dashboard localmente:
 - Este dashboard oferece uma análise básica e interativa dos dados de vendas.
 - As visualizações são geradas utilizando a biblioteca Plotly Express, permitindo interação e personalização diretas no aplicativo web.
 
----
-
-Este README fornece uma visão geral do funcionamento e dos recursos do dashboard de análise de vendas criado com Streamlit.
 
