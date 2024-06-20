@@ -1,4 +1,4 @@
-#### Dashboard de Análise de Vendas
+# Dashboard de Análise de Vendas
 
 Este é um dashboard interativo construído utilizando Streamlit, uma plataforma para criação de aplicativos web em Python. O código carrega dados de vendas de um arquivo CSV e oferece visualizações e métricas para análise.
 
