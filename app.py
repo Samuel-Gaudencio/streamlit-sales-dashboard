@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import google.generativeai as genai
+from key import key
 
 st.set_page_config(
     page_title="Dashboard",
@@ -48,8 +50,8 @@ col3.plotly_chart(fig_date)
 fig_type = px.bar(data_filtered, x='Date', y='Product Category', title='Faturamento por Categoria', color='Region')
 col4.plotly_chart(fig_type)
 
-regions = data_filtered.groupby('Region')['Units Sold'].sum().reset_index().drop_duplicates()
-fig_regions = px.bar(regions, x='Region', y='Units Sold', title='Regiões')
+regions = data_filtered.groupby('Region')['Total Revenue'].sum().reset_index().drop_duplicates()
+fig_regions = px.bar(regions, x='Region', y='Total Revenue', title='Regiões')
 col5.plotly_chart(fig_regions)
 
 fig_kid = px.pie(data_filtered, values='Total Revenue', names='Payment Method', title='Método de Pagamento')
@@ -61,6 +63,11 @@ products = products.head(10)
 fig_products = px.bar(products, x='Product Name', y='Units Sold', title='Os 10 Produtos Mais Vendidos')
 col7.plotly_chart(fig_products)
 
+# Geração de insights com a inteligência artificial Gemini
+genai.configure(api_key=key)
+model = genai.GenerativeModel('gemini-1.5-flash')
+prompt = f"O dataset a seguir corresponde a dados de um e-commerce. Me informe 5 insights sobre este dataset {data_filtered} em português."
+response = model.generate_content(prompt)
 
-    
 
+st.markdown(response.text)
