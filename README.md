@@ -29,23 +29,26 @@ Você pode instalar esses pacotes usando o pip:
 
 ```bash
 pip install streamlit pandas plotly google-generativeai
-
+```
 ## Como Executar
 1. **Clone o repositório:**
 
 ```bash
 git clone https://github.com/seu-usuario/nome-do-repositorio.git
 cd nome-do-repositorio
+````
 
 2. **Configure sua chave de API para a Gemini AI:**
 Crie um arquivo key.py no diretório raiz do projeto e adicione sua chave de API da seguinte forma:
 ```bash
 key = 'sua_chave_de_api'
+```
 
 3. **Execute o aplicativo Streamlit:**
 
 ```bash
 streamlit run app.py
+```
 
 Substitua app.py pelo nome do arquivo onde o código está salvo.
 
