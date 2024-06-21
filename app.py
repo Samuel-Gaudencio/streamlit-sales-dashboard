@@ -12,7 +12,7 @@ st.set_page_config(
 )
 
 # Carregar os dados no início
-data = pd.read_csv("C:/Users/sm283/Documents/python/test_streamlit/sales_data.csv")
+data = pd.read_csv("sales_data.csv")
 data['Date'] = pd.to_datetime(data['Date'])
 data = data.sort_values('Date')
 data['Month'] = data['Date'].apply(lambda x: str(x.year) + "-" + str(x.month))
