@@ -1,42 +1,61 @@
-# Dashboard de Análise de Vendas
+# Dashboard de Vendas - Streamlit
 
-Este é um dashboard interativo construído utilizando Streamlit, uma plataforma para criação de aplicativos web em Python. O código carrega dados de vendas de um arquivo CSV e oferece visualizações e métricas para análise.
+## Visão Geral
 
-#### Funcionalidades Principais:
+Este repositório contém um dashboard interativo criado com Streamlit para visualizar e analisar dados de vendas de um e-commerce. O dashboard oferece gráficos e métricas dinâmicas que permitem explorar o faturamento, a quantidade de produtos vendidos, e outras informações relevantes. Além disso, utiliza a inteligência artificial Gemini para gerar insights automáticos sobre os dados.
 
-1. **Configuração da Página:**
-   - O dashboard é configurado para ter um título personalizado ("Dashboard"), um ícone (🧊), layout amplo e a barra lateral expandida por padrão.
+## Funcionalidades
 
-2. **Carregamento e Pré-processamento dos Dados:**
-   - Os dados de vendas são carregados de um arquivo CSV.
-   - A coluna de data é convertida para o formato datetime e os dados são ordenados por data.
-   - É criada uma nova coluna 'Month' para facilitar a agregação por mês.
+- **Filtro por Mês**: Selecione um mês específico para filtrar os dados.
+- **Métricas Gerais**: Exibe o total faturado e a quantidade de produtos vendidos.
+- **Gráficos Interativos**:
+  - Faturamento por Dia
+  - Faturamento por Categoria de Produto
+  - Faturamento por Região
+  - Métodos de Pagamento
+  - Os 10 Produtos Mais Vendidos
+- **Geração de Insights**: Utiliza a inteligência artificial Gemini para gerar insights sobre os dados.
 
-3. **Filtragem Interativa:**
-   - Uma opção na barra lateral permite filtrar os dados por mês.
-   - Opções disponíveis incluem todos os meses presentes nos dados, além da opção "Sem Filtros" para visualizar todos os dados sem restrições.
+## Pré-requisitos
 
-4. **Métricas Gerais:**
-   - Calcula e exibe o total faturado e a quantidade total de produtos vendidos com base nos dados filtrados.
+Para executar este projeto, você precisará ter os seguintes pacotes Python instalados:
 
-5. **Visualizações Gráficas:**
-   - **Faturamento por Dia:** Um gráfico de barras que mostra o faturamento ao longo do tempo, colorido por região.
-   - **Faturamento por Categoria:** Um gráfico de barras que exibe o faturamento por categoria de produto, também colorido por região.
-   - **Vendas por Região:** Um gráfico de barras que mostra a quantidade total de produtos vendidos por região.
-   - **Método de Pagamento:** Um gráfico de pizza que ilustra a distribuição do faturamento por métodos de pagamento.
-   - **Os 10 Produtos Mais Vendidos:** Um gráfico de barras que apresenta os produtos mais vendidos, baseado na quantidade de unidades vendidas.
+- streamlit
+- pandas
+- plotly
+- google-generativeai
 
-#### Como Executar:
+Você pode instalar esses pacotes usando o pip:
 
-Para executar o dashboard localmente:
+```bash
+pip install streamlit pandas plotly google-generativeai
 
-1. Certifique-se de ter as bibliotecas necessárias instaladas (`streamlit`, `pandas`, `plotly`).
-2. Faça o download do arquivo `sales_data.csv` e ajuste o caminho de carregamento no código para refletir seu diretório local.
-3. Utilize o comando `streamlit run nome_do_arquivo.py` no terminal, onde `nome_do_arquivo.py` é o nome do arquivo Python que contém o código do dashboard.
+## Como Executar
+1. **Clone o repositório:**
 
-#### Observações:
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
 
-- Este dashboard oferece uma análise básica e interativa dos dados de vendas.
-- As visualizações são geradas utilizando a biblioteca Plotly Express, permitindo interação e personalização diretas no aplicativo web.
+2. **Configure sua chave de API para a Gemini AI:**
+Crie um arquivo key.py no diretório raiz do projeto e adicione sua chave de API da seguinte forma:
+```bash
+key = 'sua_chave_de_api'
 
+3. **Execute o aplicativo Streamlit:**
 
+```bash
+streamlit run app.py
+
+Substitua app.py pelo nome do arquivo onde o código está salvo.
+
+4. **Visualize o dashboard:**
+O aplicativo será aberto no seu navegador padrão. Você poderá interagir com os filtros e visualizar os gráficos e métricas.
+
+## Estrutura do Código
+- **Carregamento de Dados:** Os dados são carregados de um arquivo CSV e pré-processados.
+- **Layout da Página:** A página é dividida em várias colunas para organizar as métricas e gráficos.
+- **Filtragem de Dados:** A filtragem é feita com base na seleção do mês pelo usuário.
+- **Cálculo de Métricas:** As métricas gerais são calculadas com base nos dados filtrados.
+- **Visualização:** Gráficos interativos são gerados usando Plotly e exibidos no dashboard.
+- **Geração de Insights:** Utiliza a API da Gemini AI para gerar insights automáticos sobre os dados.
