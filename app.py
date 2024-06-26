@@ -66,7 +66,7 @@ col7.plotly_chart(fig_products)
 # Geração de insights com a inteligência artificial Gemini
 genai.configure(api_key=key)
 model = genai.GenerativeModel('gemini-1.5-flash')
-prompt = f"O dataset a seguir corresponde a dados de um e-commerce. Me informe 5 insights sobre este dataset {data_filtered} em português."
+prompt = f"O dataset a seguir corresponde a dados de um e-commerce. Me informe 5 insights sobre este dataset {data} em português."
 response = model.generate_content(prompt)
 
 
